@@ -3,7 +3,7 @@ Dieses Projekt enthält Demo Scripts, Slides und Aufgaben für den Kurs "backend
 ---
 Terry Harker für SAE Zurich (Web design & Development)
 
-Kursplan: TBD
+Kursplan: https://github.com/TerryHarker/WDD324-PHP/blob/main/PHP-Kursplan-orientierung_V2025-03.pdf
 
 ## Aufgaben
 Hier findest du die im Kursplan genannten Aufgaben für zuhause. Es sind jeweils kurze Texte mit einer Aufforderung, dir Gedanken zu machen. Diese Aufgaben sind nicht von der SAE gefordert, sie dienen aber der Vorbereitung auf den Kurstag der als Deadline unter "Ziel" angegeben ist.
