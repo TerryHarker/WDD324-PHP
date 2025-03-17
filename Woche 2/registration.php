@@ -1,36 +1,39 @@
 <h3>Registration</h3>
-
 <form action="" method="POST">
     <div>
-        <label for="username">Username</label>
+        <label for="username">Username*</label>
         <input type="text" id="username" name="username">
     </div>
     <div>
-        <label for="password">Password</label>
+        <label for="password">Passwort*</label>
         <input type="password" id="password" name="password">
     </div>
     <div>
-        <label for="email">E-Mail</label>
+        <label for="email">E-Mail*</label>
         <input type="email" id="email" name="email">
     </div>
     <div>
-        <label for="gender">Gender</label>
+        <label for="gender">Geschlecht</label>
         <input type="radio" id="male" name="gender" value="male">
         <label for="male">Male</label>
         <input type="radio" id="female" name="gender" value="female">
         <label for="female">Female</label>
+        <input type="radio" id="neutral" name="gender" value="neutral">
+        <label for="neutral">Neutral</label>
     </div>
     <div>
         <label for="country">Country</label>
         <select id="country" name="country">
-            <option value="usa">USA</option>
-            <option value="canada">Canada</option>
-            <option value="uk">UK</option>
+            <option value="CH">Schweiz</option>
+            <option value="DE">Deutschland</option>
+            <option value="AT">Österreich</option>
         </select>
     </div>
     <div>
-        <label for="newsletter">Subscribe to newsletter</label>
+        <label >Newsletter</label>
         <input type="checkbox" id="newsletter" name="newsletter" value="1">
+        <label for="newsletter">Ja</label>
     </div>
-    <button type="submit">Register</button>
+    <br>
+    <button type="submit">Registrieren</button>
 </form>

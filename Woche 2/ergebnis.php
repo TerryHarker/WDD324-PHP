@@ -8,7 +8,7 @@ print_r($_GET);
 echo '</pre>';
 
 echo '<pre> POST: ';
-print_r($_GET);
+print_r($_POST);
 echo '</pre>';
 ?>
 <p>
@@ -19,7 +19,7 @@ echo '</pre>';
 <h4>POST</h4>
 <p>
     <strong>Hallo <?php echo $_POST['name']; ?>, 
-    du interessierst dich für <?php echo $_POST['interests']; ?></strong>
+    du interessierst dich für <?php echo implode(', ', $_POST['interests']);; ?></strong>
 </p>
 <p>
     <a href="umfrage.html.php">Zurück zur Umfrage</a>

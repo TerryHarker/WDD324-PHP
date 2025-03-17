@@ -1,5 +1,6 @@
 <!-- Diese Datei enthält ein Formular, das Daten an ergebnis.php sendet -->
 <h3>Umfrage</h3>
+
 <h4>Form GET</h4>
 <form action="ergebnis.php" method="GET">
     <div>
@@ -16,14 +17,21 @@
             <input type="checkbox" id="backend" name="interests[]" value="backend">
             <label for="backend">Backend (PHP / MySQL)</label>
         </div>
+        <div>
+                <select name="auswahl">
+                    <option value="eins">eins</option>
+                    <option value="2">zwei</option>
+                </select>
+        </div>
     </div>
     <button type="submit">Absenden</button>
 </form>
+
 <h4>Form POST</h4>
 <form action="ergebnis.php" method="POST">
     <div>
         <label for="name">Dein Name</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name">
     </div>
     <div>
         <label>Interessen</label><br>
