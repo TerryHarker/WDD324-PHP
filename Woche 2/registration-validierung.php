@@ -5,14 +5,27 @@
  * Hier sind weitere Beispiele: https://learn.bytekultur.net/formulare/kontaktformular-validierung
  */
 
-
 $hasErrors      = false; // Statusvariable für Fehler (true=fehlerhaft)
 $errorMessages  = array(); // Container zum Sammeln von Fehlermeldungen 
 
-// isset prüft ob ein mitgegebener Wert existiert
+// Variable initialisieren
+$username = ''; 
+$email = '';
+$gender = '';
+$country = '';
+$newsletter = '';
+
+// isset prüft ob ein mitgegebene Werte existieren
 if( isset($_POST['username']) && isset($_POST['password']) ){
     // Formular ist anscheinend abgeschickt worden
-    // echo 'username/password wurde mitgeschickt';
+    
+    // als erstes: Input sanitizing (bereinigen)
+    $username   = strip_tags($_POST['username']);
+    $email      = strip_tags($_POST['email']);
+    $gender     = strip_tags($_POST['gender']);
+    $country    = strip_tags($_POST['country']);
+    $newsletter = (int)$newsletter; // sollte 1 sein
+    // passwort dürfen wir nicht bereinigen!!!
 
     // username Pflichtfeld überprüfen
     if( empty($_POST['username']) ){
@@ -34,7 +47,7 @@ if( isset($_POST['username']) && isset($_POST['password']) ){
     */
 
     // E-Mail Format prüfen
-    $validEmail = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+    $validEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
     if($validEmail == false){
         $hasErrors = true;
         $errorMessages[] = 'Bitte eine gültige Email adresse angeben';
@@ -78,7 +91,7 @@ echo '</pre>';
 <form action="" method="POST">
     <div>
         <label for="username">Username*</label>
-        <input type="text" id="username" name="username">
+        <input type="text" id="username" name="username" value="<?php echo $username; ?>">
     </div>
     <div>
         <label for="password">Passwort*</label>
@@ -86,15 +99,15 @@ echo '</pre>';
     </div>
     <div>
         <label for="email">E-Mail*</label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="email" name="email" value="<?=$email; // kurzschreibweise für echo ?>">
     </div>
     <div>
         <label for="gender">Geschlecht</label>
-        <input type="radio" id="male" name="gender" value="male">
+        <input type="radio" id="male" name="gender" value="male" <?php echo $gender == 'male' ? 'checked':''; // ternary operator statt if/else ?>>
         <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="female">
+        <input type="radio" id="female" name="gender" value="female" <?php echo $gender == 'female' ? 'checked':''; ?>>
         <label for="female">Female</label>
-        <input type="radio" id="neutral" name="gender" value="neutral">
+        <input type="radio" id="neutral" name="gender" value="neutral" <?php echo $gender == 'neutral' ? 'checked':''; ?>>
         <label for="neutral">Neutral</label>
     </div>
     <div>
