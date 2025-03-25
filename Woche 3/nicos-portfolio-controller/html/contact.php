@@ -1,19 +1,4 @@
-<?php
-require_once('configuration.php');
-require_once('functions/html.functions.php');
 
-// Metadaten für htmlhead.php
-$page_title = "Nico's Portfolio | Kontakt";
-$meta_desc = '';
-?>
-<!DOCTYPE html>
-<html lang="en-gb" dir="ltr" vocab="http://schema.org/">
-	
-	<?php include('partials/htmlhead.php'); ?>
-
-	<body>
-		
-		<?php include('partials/header.php'); ?>
 	
 		<section class="main-section">
 			<div class="container">
@@ -41,9 +26,3 @@ $meta_desc = '';
 				</div>
 			</div>
 		</section>
-		
-		
-		<?php include('partials/footer.php'); ?>
-		
-	</body>
-</html>

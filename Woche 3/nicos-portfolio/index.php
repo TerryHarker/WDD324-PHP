@@ -1,5 +1,6 @@
 <?php
 require_once('configuration.php');
+require_once('functions/html.functions.php');
 
 // Metadaten für htmlhead.php
 $page_title = 'Nicos HTML Page | Home';
