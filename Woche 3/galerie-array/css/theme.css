@@ -1,0 +1,47 @@
+.background-dark {
+	background-color:#111111 !important;
+}
+a, .nav-link {
+    color: #333333;
+    text-decoration: underline;
+}
+a:hover, a:active {
+    text-decoration: underline;
+}
+a:hover, a:active,
+.nav-link:hover, .nav-link:active {
+    color: #000000;
+}
+.nav-link, .nav-link:hover, .nav-link:active {
+    text-decoration: none;
+}
+.nav-link:hover, .nav-link:active, .nav-link.active {
+	color: #308fbb;
+}
+.navbar-brand:hover, .navbar-brand:active  { text-decoration: none;}
+
+.heading, h1, h2, h3, h4 {
+	font-family: "EB Garamond", serif;
+	font-optical-sizing: auto;
+	font-weight: <weight>;
+	font-style: normal;
+}
+.heading-large { font-size: 65px;}
+.heading-xlarge { font-size:84px; }
+
+.navbar {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.main-section .container {
+	min-height:calc( 100vh - 56px - 186px );
+}
+.footer-section .container {
+	min-height:110px;
+	position:relative;
+	display:flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.row > div img { max-width:100%; }
