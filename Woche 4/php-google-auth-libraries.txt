@@ -1,0 +1,7 @@
+2FA mit Google Authenticator
+****************************
+
+https://github.com/dochne/google-authenticator?tab=readme-ov-file
+https://github.com/Spomky-Labs/otphp
+https://github.com/chregu/GoogleAuthenticator.php
+https://github.com/PHPGangsta/GoogleAuthenticator
