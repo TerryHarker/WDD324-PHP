@@ -6,6 +6,9 @@
  * wenn das Projekt auf einem anderen Server eingerichtet wird.
  */
 
+// SEF URLs
+define('SEF_URLS', true); // SEF URLs aktiv oder nicht
+
 // Bilder
 define('BILDERORDNER', 'images'); // Ordner, in den alle Bilder hochgeladen werden
 

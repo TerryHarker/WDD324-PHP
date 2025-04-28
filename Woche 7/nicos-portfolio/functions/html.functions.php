@@ -12,8 +12,15 @@
   * @param string $navClass - CSS Klassen für den UL Tag der Navigation
   * @return string $html_output - das fertige Nav HTML
   */
-function writeNav( $navClass='nav' ){
+function writeNav( $navClass='nav', $sef=false ){
     
+    // SEF URL einschalten/ausschalten - dieser Teil setzt eine .HTACCESS Datei voraus, in welcher die entsprechenden rewrite Regeln definiert sind
+    $suffix = '.php';
+    if($sef == true || SEF_URLS == true){ // entweder über den parameter in writeNav() oder in der Config definieren 
+      $suffix = ''; // .php wird weggelassen in den NAV URLs
+    }
+
+
     // zuerst den Dateinamen für den Aktivstatus der Nav ermitteln
     $aktueller_url = $_SERVER['PHP_SELF']; // $_SERVER ist ein Super Global, global = auf allen Ebenen gültig, daher kann es hier im Function Scope verwendet werden
     $letzter_slash = strrpos($aktueller_url, '/');
@@ -25,13 +32,13 @@ function writeNav( $navClass='nav' ){
     $html_output = '<ul class="'.$navClass.'">';
 
     $activeClass = $dateiname=='index.php'?'active':'';
-    $html_output .= '<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2 '.$activeClass.'" href="index.php">Home</a></li>';
+    $html_output .= '<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2 '.$activeClass.'" href="./">Home</a></li>';
     
     $activeClass = $dateiname=='portfolio.php'?'active':'';
-    $html_output .= '<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2 '.$activeClass.'" href="portfolio.php">Portfolio</a></li>';
+    $html_output .= '<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2 '.$activeClass.'" href="portfolio'.$suffix.'">Portfolio</a></li>';
     
     $activeClass = $dateiname=='contact.php'?'active':'';
-    $html_output .= '<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2 '.$activeClass.'" href="contact.php">Kontakt</a></li>';
+    $html_output .= '<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2 '.$activeClass.'" href="contact'.$suffix.'">Kontakt</a></li>';
 
     $html_output .= '</ul>';
 
